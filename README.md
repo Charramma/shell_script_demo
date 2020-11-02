@@ -20,3 +20,6 @@
     检测mysql是否存在名称为tt的数据库，若存在，请将tt库下的每个表都独立到一份以<表名.sql>为文件名的sql，放在当前目录下，请写出命令。
     （相关信息：本地库127.0.0.1或者localhost，端口3306，sock：/tmp/mysql.sock，账号：ttuser 密码：ttpasswd）
 
+- **new_init** 给我自己新装的虚拟机进行初始化配置的脚本
+
+- **redis_setup_v1.sh** 编译安装redis 6.0.9，感觉还有点瑕疵
