@@ -22,4 +22,4 @@
 
 - **new_init** 给我自己新装的虚拟机进行初始化配置的脚本
 
-- **redis_setup_v1.sh** 编译安装redis 6.0.9，感觉还有点瑕疵
+- **redis_setup.sh** 编译安装redis 6.0.9
