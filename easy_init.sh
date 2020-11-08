@@ -1,4 +1,7 @@
 #/bin/bash
+# date: 2020-11-8
+# author: Charramma
+# description: 对个人的linux机器进行简单的配置
 
 # 创建用户 指定家目录为/Charramma
 useradd -d /Charramma Charramma  &>> /dev/null

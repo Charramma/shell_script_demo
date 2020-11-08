@@ -29,7 +29,7 @@ sysctl -p
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
 
 # 修改redis配置文件
-# 允许后台允许
+# 允许后台运行
 sed -i 's/daemonize no/daemonize yes/' /usr/local/redis/redis.conf
 sed -i 's/protected-mode yes/protected-mode no/' /usr/local/redis/redis.conf
 echo "requirepass Charramma123#" >> /usr/local/redis/redis.conf

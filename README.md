@@ -23,3 +23,7 @@
 - **new_init** 给我自己新装的虚拟机进行初始化配置的脚本
 
 - **redis_setup.sh** 编译安装redis 6.0.9
+
+- **easy_init.sh** 对我自己的linux系统进行简单的配置
+
+- **static_ip.sh** 对我自己的虚拟机进行静态ip配置
