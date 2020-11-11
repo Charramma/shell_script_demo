@@ -7,7 +7,7 @@
 
 - **nginx_setup_v2.0s.sh**  编译安装Nginx 1.19.2（简化版）
 
-- **nginx_setup_v2.0s.sh**  编译安装Nginx 1.19.2（在第一版的基础上删除service文件，使用原生服务开启关闭方式）
+- **nginx_setup_v3.0s.sh**  编译安装Nginx 1.19.2（在第一版的基础上删除service文件，使用原生服务开启关闭方式）
 
 - **parted_partition.sh**  使用parted分区
 

@@ -14,7 +14,7 @@ tar xf nginx-1.19.2.tar.gz
 cd nginx-1.19.2
 
 # 编译安装前的配置
-./configure --prefix=/usr/local/nginx --user=nginx --with-http_realip_module  --with-http_ssl_module  --with-pcre
+./configure --prefix=/usr/local/nginx  --with-http_stub_status_module --with-http_realip_module  --with-http_ssl_module  --with-pcre --with-stream
 
 # 编译安装
 make
