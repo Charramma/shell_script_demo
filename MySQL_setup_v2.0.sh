@@ -13,7 +13,7 @@ echo '#################################################'
 echo '开始安装MySQL'
 
 # 下载依赖包
-yum install cmake ncurses-devel gcc gcc-c++ bzip2 openssl-devel -y
+yum install cmake ncurses-devel gcc gcc-c++ bzip2 openssl-devel wget -y
 
 # 新建一个无家目录且禁止登录的用户mysql，这个用户是linux系统用来启动MySQL的。
 useradd -r -s /sbin/nologin mysql
@@ -23,7 +23,7 @@ mkdir -p /data/mysql
 chown mysql:mysql /data/mysql
 
 # 下载源码包
-curl -O https://downloads.mysql.com/archives/get/p/23/file/mysql-community-5.7.29-1.el7.src.rpm
+wget https://downloads.mysql.com/archives/get/p/23/file/mysql-community-5.7.29-1.el7.src.rpm
 # 解压源码包
 rpm -ivh mysql-community-5.7.29-1.el7.src.rpm
 # 进入存放真正源码包的目录

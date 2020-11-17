@@ -18,7 +18,7 @@ then
     echo -e "\033[42;37m ----- 正在添加新用户并给新用户添加管理员权限 ----- \033[0m"
     useradd Charramma &> /dev/null
     echo Charramma123# | passwd Charramma --stdin  &>/dev/null
-    sed -i "100a Charramma    ALL=(ALL)     ALL" /etc/sudoers
+    echo "Charramma    ALL=(ALL)    ALL" >> /etc/sudoers
     sleep 1
     echo
 
@@ -55,7 +55,7 @@ then
     # 配置YUM源
     echo -e "\033[42;37m ----- 正在配置YUM源 ----- \033[0m"
     cd /etc/yum.repos.d
-    wget http://mirrors.163.com/.help/CentOS7-Base-163.repo &> /dev/null
+    wget http://mirrors.aliyun.com/repo/Centos-7.repo >> /dev/null
     mv CentOS-Base.repo CentOS-Base.repo.bak
     mv CentOS7-Base-163.repo CentOS-Base.repo
     cd - &>/dev/null
