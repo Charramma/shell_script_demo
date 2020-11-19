@@ -28,9 +28,10 @@
 
 - **static_ip.sh** 对我自己的虚拟机进行静态ip配置
 
-- virtual_ftp 配置虚拟用户连接ftp
+- **virtual_ftp** 配置虚拟用户连接ftp
 
-    virtual_ftp_set.sh 配置虚拟用户
+    **virtual_ftp_set.sh** 配置虚拟用户
 
-    virtual_ftp_del.sh 删除virtual_ftp_set.sh的配置
+    **virtual_ftp_del.sh** 删除virtual_ftp_set.sh的配置
 
+- **wuliao.sh** 一个无聊的脚本
