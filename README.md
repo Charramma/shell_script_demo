@@ -37,3 +37,5 @@
 - **wuliao.sh** 一个无聊的脚本
 
 - **welcome.sh** 输出一个ASCII字符CHARRAMMA，给予可执行权限，然后写到/etc/profile中，每次打开终端就会执行，作为一个欢迎界面
+
+- **netspeed_check.sh** 简单的网速测试脚本，只能测试上传速度和下载速度

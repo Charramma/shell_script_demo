@@ -23,8 +23,8 @@ make install
 cd -
 
 # 修改环境变量
+export PATH=$PATH:/usr/local/nginx/sbin/
 echo 'export PATH=$PATH:/usr/local/nginx/sbin/' >>/etc/profile
-source /etc/profile
 
 # 关闭防火墙
 service firewalld stop
