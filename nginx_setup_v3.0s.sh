@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 安装依赖关系包
-yum -y install zlib zlib-devel openssl openssl-devel pcre pcre-devel gcc gcc-c++ autoconf automake make &>/dev/null
+yum -y install zlib zlib-devel openssl openssl-devel pcre pcre-devel gcc gcc-c++ autoconf automake make
 
 # 下载安装包
 curl -O http://nginx.org/download/nginx-1.19.2.tar.gz
