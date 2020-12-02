@@ -18,7 +18,7 @@ then
     echo -e "\033[42;37m ----- 正在添加新用户并给新用户添加管理员权限 ----- \033[0m"
     useradd Charramma &> /dev/null
     echo Charramma123# | passwd Charramma --stdin  &>/dev/null
-    echo "Charramma    ALL=(ALL)    ALL" >> /etc/sudoers
+    sed -i "/^root.*ALL$/a Charramma    ALL=(ALL)    ALL" /etc/sudoers
     sleep 1
     echo
 

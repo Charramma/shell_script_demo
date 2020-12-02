@@ -21,7 +21,7 @@ else
 	mkdir -p /Charramma/script; chown Charramma:Charramma /Charramma/script
 	
 	# 给用户Charramma授权
-	echo "Charramma    ALL=(ALL)    ALL" >> /etc/sudoers
+	sed -i "/^root.*ALL$/a Charramma    ALL=(ALL)    ALL" /etc/sudoers
 	
 	# 下载常用软件
 	yum install epel-release -y
