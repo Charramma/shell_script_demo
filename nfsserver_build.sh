@@ -15,12 +15,11 @@ systemctl start rpcbind.service
 systemctl start nfs.service
 
 # 设置开机自启动
-systemctl start rpcbind.service
-systemctl start nfs.service
+systemctl enable rpcbind.service
+systemctl enable nfs.service
 
 # 创建挂载目录及文件
 mkdir -p /nfs/test/
-echo hello > /nfs/test/test.txt
 
 echo "/nfs/test/ 192.168.1.0/24(rw,sync)" >> /etc/exports
 
