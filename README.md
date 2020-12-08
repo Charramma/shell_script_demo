@@ -41,3 +41,5 @@
 - **netspeed_check.sh** 简单的网速测试脚本，只能测试上传速度和下载速度
 
 - **ip_change.sh** 配置静态ip
+
+- **nfsserver_build.sh** nfs服务端配置脚本，根据需求对配置进行修改

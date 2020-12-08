@@ -38,4 +38,9 @@ nginx
 echo 'nginx' >> /etc/rc.d/rc.local
 chmod +x /etc/rc.d/rc.local
 
-echo '*************** nginx安装完成 *****************'
+netstat -ntpl | grep 80
+if [[ $? == 0 ]]; then
+    echo -e "\033[42;37m *************** nginx安装完成 ***************** \033[0m"
+else
+    echo -e "\033[41;37m *************** nginx没有开启，请检查一下！***************** \033[0m"
+fi

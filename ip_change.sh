@@ -5,7 +5,7 @@
 
 read -p "输入网卡名：" device
 read -p "输入静态ip：" ip
-gateway=`echo $ip | cut -d "." -f 1-3`
+gateway=`echo $ip | cut -d "." -f 1-3`.1
 
 # 测试ip是否被占用
 ping $ip -w 1 -c 1 &> /dev/null
@@ -15,6 +15,11 @@ if [[ $? == 0 ]]; then
 fi
 
 # 修改网络脚本
+sed -i "/^IPADDR=.*/d" "/etc/sysconfig/network-scripts/ifcfg-$device"
+sed -i "/^GATEWAY=.*/d" "/etc/sysconfig/network-scripts/ifcfg-$device"
+sed -i "/^PREFIX=.*/d" "/etc/sysconfig/network-scripts/ifcfg-$device"
+sed -i "/^DNS.*/d" "/etc/sysconfig/network-scripts/ifcfg-$device"
+
 sed -i 's/^BOOTPROTO=.*/BOOTPROTO="none"/' "/etc/sysconfig/network-scripts/ifcfg-$device"
 echo "IPADDR=$ip" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
 echo "PREFIX=24" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
