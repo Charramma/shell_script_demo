@@ -8,7 +8,7 @@ read -p "输入静态ip：" ip
 gateway=`echo $ip | cut -d "." -f 1-3`.1
 
 # 测试ip是否被占用
-cur_ip=`ifconfig | egrep -A 3  ".*$device.*" | grep -w inet | awk '{print $2}'`
+cur_ip=`ifconfig | egrep -A 1  ".*$device.*" | grep -w inet | awk '{print $2}'`
 ping $ip -w 1 -c 1 &> /dev/null
 if [[ $? == 0 ]] && [[ $ip != $cur_ip ]]; then
     echo -e "\033[41;37m 此ip已被占用 \033[0m"
