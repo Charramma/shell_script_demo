@@ -25,8 +25,8 @@ sed -i 's/^BOOTPROTO=.*/BOOTPROTO="none"/' "/etc/sysconfig/network-scripts/ifcfg
 echo "IPADDR=$ip" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
 echo "PREFIX=24" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
 echo "GATEWAY=$gateway" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
-echo "DNS1=114.114.114.114" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
-echo "DNS2=$gateway" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
+echo "DNS1=$gateway" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
+echo "DNS2=114.114.114.114" >> "/etc/sysconfig/network-scripts/ifcfg-$device"
 
 # 重启服务
 systemctl stop NetworkManager
