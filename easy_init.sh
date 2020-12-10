@@ -34,5 +34,14 @@ else
 	yum install telnet -y
 	yum install tree -y
 	yum install lrzsz -y
+	
+	# 给历史命令加上日期和时间
+	export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S  "
+	echo 'export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S  "' >> /etc/profile
+	
+	# 关闭Linux系统峰鸣
+	rmmod pcspkr
+	echo "rmmod pcspkr" >> /etc/rc.d/rc.local
+	chmod +x /etc/rc.d/rc.local
 fi
 echo -e "\033[42;37m --------------- SUCCESS! --------------- \033[0m"
