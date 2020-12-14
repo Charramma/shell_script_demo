@@ -9,11 +9,12 @@ yum install wget make -y
 # 安装依赖
 yum install gcc patch libffi-devel python-devel zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y
 
-# 下载python3.9.1的源码包
-wget -N https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
+# 下载python 3.9.1的源码包
+version=3.9.1
+wget -N https://www.python.org/ftp/python/${version}/Python-${version}.tgz
 #解压
-tar -xzf Python-3.9.1.tgz
-cd Python-3.9.1
+tar -xzf Python-${version}.tgz
+cd Python-${version}
 
 # 编译安装三部曲
 ./configure --prefix=/usr/local/python39/
