@@ -43,3 +43,6 @@
 - **ip_change.sh** 配置静态ip
 
 - **nfsserver_build.sh** nfs服务端配置脚本，根据需求对配置进行修改
+
+- **python3_9_1_setup_C7.sh** CentOS 7 环境下编译安装Python3.9.1，安装路径在/usr/local/python39/
+
