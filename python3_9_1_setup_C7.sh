@@ -19,14 +19,14 @@ cd Python-${version}
 # 编译安装三部曲
 ./configure --prefix=/usr/local/python39/
 make -j2
-make insatll
+make install
 
 # 添加安装目录到PATH变量
 export PATH=$PATH:/usr/local/python39/bin/
 echo "export PATH=$PATH:/usr/local/python39/bin/" >> /etc/profile
 
 # 配置pip国内源
-mkdir ~/.pip
+mkdir -p ~/.pip
 cat > ~/.pip/pip.conf << EOF
 [global]
 time-out=60
