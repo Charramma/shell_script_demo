@@ -3,12 +3,19 @@
 # Author: Charramma(Huang)
 # Description: 配置静态ip，需要手动输入ip
 
-read -p "输入网卡名：" device
-read -p "输入静态ip：" ip
-gateway=`echo $ip | cut -d "." -f 1-3`.1
+# 查看有哪些网卡
+echo =========== 现有网卡 ============
+service network status
+echo -e "================================\n"
+
+# 输入
+read -p "要修改的网卡：" device
+read -p "修改后的静态ip：" ip
+
+gateway=`echo $ip | cut -d "." -f 1-3`.1    # 网关
 
 # 测试ip是否被占用
-cur_ip=`ifconfig | egrep -A 1  ".*$device.*" | grep -w inet | awk '{print $2}'`
+cur_ip=`ip a | grep ens33 -A 3 | grep -w inet | awk '{print $2}' | awk -F / '{print $1}'`   # 现在的ip
 ping $ip -w 1 -c 1 &> /dev/null
 if [[ $? == 0 ]] && [[ $ip != $cur_ip ]]; then
     echo -e "\033[41;37m 此ip已被占用 \033[0m"
