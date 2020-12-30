@@ -26,8 +26,6 @@
 
 - **easy_init.sh** 对我自己的linux系统进行简单的配置
 
-- **static_ip.sh** 对我自己的虚拟机进行静态ip配置
-
 - **virtual_ftp** 配置虚拟用户连接ftp
 
     **virtual_ftp_set.sh** 配置虚拟用户
