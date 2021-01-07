@@ -57,7 +57,7 @@ then
     cd /etc/yum.repos.d
     wget http://mirrors.aliyun.com/repo/Centos-7.repo >> /dev/null
     mv CentOS-Base.repo CentOS-Base.repo.bak
-    mv CentOS7-Base-163.repo CentOS-Base.repo
+    mv CentOS-7.repo CentOS-Base.repo
     cd - &>/dev/null
     sleep 1
     echo
