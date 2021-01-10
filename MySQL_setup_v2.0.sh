@@ -89,15 +89,6 @@ PATH=$PATH:/usr/local/mysql/bin
 # 加斜杠直接覆盖不提示
 \cp ../support-files/mysql.server /etc/init.d/mysqld
 
-#关闭防火墙firewalld服务
-service firewalld stop &>/dev/null
-#设置firewalld服务开机不启动
-systemctl  disable firewalld &>/dev/null
-#临时关闭selinux
-setenforce 0 &>/dev/null
-#永久修改selinux配置文件里的内容
-sed -i 's/=enforcing/=disabled/g' /etc/selinux/config &>/dev/null
-
 # 设置开机启动MySQL
 chkconfig --add mysqld
 # 启动MySQL
