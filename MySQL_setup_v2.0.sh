@@ -80,14 +80,14 @@ cd /usr/local/mysql/bin
 ./mysqld --initialize  --user=mysql --basedir=/usr/local/mysql/  --datadir=/data/mysql  &>/root/temp_password.txt
 
 # 将新的PATH变量重定向到/etc/bashrc文件（下次开机生效）
-echo 'PATH=$PATH:/usr/local/mysql/bin' >>/etc/bashrc
+echo "export PATH=$PATH:/usr/local/mysql/bin" >> /etc/profile
 # 刷新环境变量
 #source /etc/bashrc
 PATH=$PATH:/usr/local/mysql/bin
 
 # 拷贝mysqld的程序文件到指定的目录，方便后面设置mysqld服务开机启动。
 # 加斜杠直接覆盖不提示
-\cp ../support-files/mysql.server /etc/init.d/mysqld
+\cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
 
 # 设置开机启动MySQL
 chkconfig --add mysqld
@@ -95,7 +95,7 @@ chkconfig --add mysqld
 service mysqld start
 
 #从保存的临时密码文件里，截取出临时密码，赋值给一个变量temp_pwd
-temp_pwd=$(cat /root/temp_password.txt |tail -1|awk '{print $11}')
+temp_pwd=`cat /root/temp_password.txt  | tail -1 | awk '{print $NF}'`
 #给MySQL设置密码为MySqlroot123#
 mysql -uroot -p$temp_pwd  --connect-expired-password -e "set password='MySqlroot123#'"
 
